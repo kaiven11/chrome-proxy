@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Proxy Authentication Helper",
+  "version": "1.0",
+  "description": "Automatically handle proxy authentication for ungoogled-chromium",
+  "permissions": [
+    "webRequest",
+    "webRequestAuthProvider",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Proxy Auth Settings"
+  },
+  "externally_connectable": {
+    "matches": ["*://localhost/*", "*://127.0.0.1/*"]
+  }
+}
